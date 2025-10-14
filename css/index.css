@@ -1,0 +1,10 @@
+@font-face{
+    font-family: sans;
+    src: url(../fonts/static/OpenSans-Regular.ttf);
+}
+*{
+    font-family: sans;
+}
+body{
+    background-image: linear-gradient(to bottom, #000000, #313131, #5f5f5f, #929292, #c9c9c9);
+}
