@@ -106,7 +106,7 @@ $tipoUsuario = $_SESSION['tipo'];
       </div>
 
       <!-- TAREAS -->
-      <div onclick="location.href='../ordenes/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
+      <div onclick="location.href='../tareas/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
         <div class="absolute inset-0 p-[6px] rounded-2xl animate-border bg-[conic-gradient(at_top_left,_cyan,_blue,_purple,_cyan)] blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
         <div class="relative bg-[#1f1f1f] rounded-2xl w-full h-full flex flex-col justify-center items-center text-center z-10 border border-gray-700">
           <div class="absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0">
