@@ -5,6 +5,36 @@ if (!isset($_SESSION['username'])) {
     header("Location: login/index.php");
     exit();
 }
+
+$tipoUsuario = $_SESSION['tipo'];
+
+// ===============================
+// CONFIG
+// ===============================
+$ADEUDOS_LAN    = "http://192.168.99.253:5173/"; // Vite en LAN
+$ADEUDOS_TUNNEL = "http://b88e0bd2df17.sn.mynetname.net:5173/"; // Vite por túnel (si lo expones)
+$LAN_HOST = "192.168.99.253";
+$LAN_PORT = 5173;
+
+// timeout en segundos (0.2–0.6 es suficiente)
+function hostAlive($host, $port, $timeout = 0.35) {
+    $errno = 0; $errstr = "";
+    $fp = @fsockopen($host, $port, $errno, $errstr, $timeout);
+    if ($fp) { fclose($fp); return true; }
+    return false;
+}
+
+// Decide URL
+$ADEUDOS_URL = hostAlive($LAN_HOST, $LAN_PORT) ? $ADEUDOS_LAN : $ADEUDOS_TUNNEL;
+?>
+
+<?php
+//session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login/index.php");
+    exit();
+}
 // Guardar el tipo de usuario
 $tipoUsuario = $_SESSION['tipo'];
 //echo "Bienvenido, " . $_SESSION['username'];
@@ -120,7 +150,7 @@ $tipoUsuario = $_SESSION['tipo'];
         </div>
       </div>
 
-      <div onclick="location.href='http://192.168.99.253:5173/'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
+      <div onclick="location.href='<?= $ADEUDOS_URL ?>'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
         <div class="absolute inset-0 p-[6px] rounded-2xl animate-border bg-[conic-gradient(at_top_left,_cyan,_blue,_purple,_cyan)] blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
         <div class="relative bg-[#1f1f1f] rounded-2xl w-full h-full flex flex-col justify-center items-center text-center z-10 border border-gray-700">
           <div class="absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0">
@@ -134,7 +164,6 @@ $tipoUsuario = $_SESSION['tipo'];
         </div>
       </div>
 <?php endif; ?>
-      <!-- PAGOS -->
       <!-- PAGOS -->
 <div onclick="location.href='../pagos/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
   
