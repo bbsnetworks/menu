@@ -80,7 +80,7 @@ $tipoUsuario = $_SESSION['tipo'];
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
       <?php if ($tipoUsuario != 'pagos'): ?>
       <!-- Tarjeta ejemplo: CONTRATOS -->
-      <div onclick="location.href='../contratos/fibra/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
+      <div onclick="location.href='../contratos/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
         
         <!-- Borde más visible -->
         <div class="absolute inset-0 p-[6px] rounded-2xl animate-border bg-[conic-gradient(at_top_left,_cyan,_blue,_purple,_cyan)] blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
@@ -97,6 +97,29 @@ $tipoUsuario = $_SESSION['tipo'];
           <!-- Texto hover -->
           <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-500 mt-4 z-10">
             <div class="text-xl font-semibold tracking-wide text-blue-100 mb-2">Contratos</div>
+            <div class="text-sm text-gray-400">Administra contratos, crea, edita y descarga archivos PDF para cada cliente.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div onclick="location.href='../contratos/fibra/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
+        
+        <!-- Borde más visible -->
+        <div class="absolute inset-0 p-[6px] rounded-2xl animate-border bg-[conic-gradient(at_top_left,_cyan,_blue,_purple,_cyan)] blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+        
+        <!-- Fondo interno -->
+        <div class="relative bg-[#1f1f1f] rounded-2xl w-full h-full flex flex-col justify-center items-center text-center z-10 border border-gray-700">
+          
+          <!-- Ícono + Título centrado (desaparece al hover) -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 group-hover:opacity-0">
+            <div class="text-6xl text-blue-300 mb-2"><i class="bi bi-file-earmark-medical-fill"></i></div>
+            <div class="text-xl font-semibold tracking-wide text-blue-100">Contratos Fibra (Nuevo)</div>
+          </div>
+
+          <!-- Texto hover -->
+          <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-500 mt-4 z-10">
+            <div class="text-xl font-semibold tracking-wide text-blue-100 mb-2">Contratos Fibra (Nuevo)</div>
             <div class="text-sm text-gray-400">Administra contratos, crea, edita y descarga archivos PDF para cada cliente.</div>
           </div>
 
