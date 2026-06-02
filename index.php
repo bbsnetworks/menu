@@ -103,7 +103,7 @@ $tipoUsuario = $_SESSION['tipo'];
         </div>
       </div>
 
-      <div onclick="location.href='../contratos/fibra/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
+      <div onclick="location.href='../fibra/index.php'" class="relative group h-[220px] cursor-pointer transition-transform hover:scale-105 overflow-hidden rounded-2xl">
         
         <!-- Borde más visible -->
         <div class="absolute inset-0 p-[6px] rounded-2xl animate-border bg-[conic-gradient(at_top_left,_cyan,_blue,_purple,_cyan)] blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
